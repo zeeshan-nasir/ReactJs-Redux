@@ -6,39 +6,50 @@ const root = document.getElementById("root");
 // Navbar
 
 const navbar = document.createElement("div");
+navbar.id = "nav";
+
 const title = document.createElement("p");
 title.textContent = "Todo App";
-navbar.id = "nav";
+title.id = "title";
+
 const image = document.createElement("img");
 image.src = logo;
+image.id = "image";
 
 // Container
 
 const container = document.createElement("div");
+container.id = "container";
 
 const leftDiv = document.createElement("div");
+leftDiv.id = "left";
 const rightDiv = document.createElement("div");
+rightDiv.id = "right";
 
 // Left Div
 
 const input = document.createElement("textarea");
+input.placeholder = "Enter todo text"
 const btn = document.createElement("button");
 btn.id = "btn";
+btn.textContent = "Add";
+
+// Right Div
 
 btn.addEventListener("click", () => {
   let todo = input.value;
   console.log(todo);
+
+  const list = document.createElement("div");
+  list.id = "list";
+
+  const p = document.createElement("p");
+  p.textContent = todo;
+  list.append(p);
+  rightDiv.append(list);
 });
 
-// Right Div
-
-const list = document.createElement("div");
-const p = document.createElement("p");
-
-navbar.append(logo, title);
-root.append(navbar);
+navbar.append(image, title);
 leftDiv.append(input, btn);
-list.append(p);
-rightDiv.append(list);
 container.append(leftDiv, rightDiv);
-root.append(container);
+root.append(navbar, container);
