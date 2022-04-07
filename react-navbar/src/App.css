@@ -1,0 +1,23 @@
+.App {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    align-items: center;
+}
+
+#links {
+    color: white;
+    text-decoration: none;
+    margin: 0px 30px;
+}
+
+#btn {
+    border-radius: 15px;
+    background-color: rgb(3, 135, 170);
+    height: 25px;
+    width: 80px;
+    color: white;
+    border: 1px solid rgb(3, 135, 170);
+}
