@@ -8,6 +8,9 @@ module.exports = {
   },
   mode: "development",
   module: {
-    rules: [{ test: /\.css$/, use: ["style-loader", "css-loader"] }],
+    rules: [
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      { test: /\.js$/, use: ["babel-loader"] },
+    ],
   },
 };
