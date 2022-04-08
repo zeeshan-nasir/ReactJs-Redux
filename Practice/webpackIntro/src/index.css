@@ -1,0 +1,20 @@
+.redText {
+  color: tomato;
+}
+
+#card {
+  border: 1px solid rgb(188, 188, 188);
+  width: 50%;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+}
+
+#data {
+  height: 150px;
+  width: 100%;
+}
