@@ -6,16 +6,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Mobile Operating System</h1>
+      <Heading title="Mobile Operating System" />
       {os.map(e => {
         return <Oper name={e} />
       })}
-      <h1>Mobile Manufacturers</h1>
+
+      <Heading title="Mobile Manufacturers" />
       {company.map(e => {
         return <Oper name={e} />
       })}
     </div>
   );
+}
+
+const Heading = (props) => {
+  return <h1>{props.title}</h1>
 }
 
 const Oper = (props) => {
