@@ -2,7 +2,22 @@ import './App.css';
 
 function App() {
    const os = ["Android", "Blackberry", "iPhone", "Windows Phone"];
-   const company = [["Samsung", "square"], ["HTC", "square"], ["Micromax", "disc"], ["Apple", "circle"]];
+   const company = [{
+      name: "Samsung",
+      type: "square"
+   },
+   {
+      name: "HTC",
+      type: "square"
+   },
+   {
+      name: "Micromax",
+      type: "disc"
+   },
+   {
+      name: "Apple",
+      type: "circle"
+   }];
 
    return (
       <div className="App">
@@ -13,7 +28,7 @@ function App() {
 
          <Heading title="Mobile Manufacturers" />
          {company.map(e => {
-            return <ListMarker name={e[0]} type={e[1]} />
+            return <ListMarker name={e.name} type={e.type} />
          })}
       </div>
    );
