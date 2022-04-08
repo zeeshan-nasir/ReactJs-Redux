@@ -38,8 +38,8 @@ function App() {
    return (
       < div className="App" >
          {/* {navbar.map(e => (
-        <Category image={e.image} title={e.title} />
-      ))} */}
+                <Category image={e.image} title={e.title} />
+            ))} */}
 
          <h3> Counter: {counter}</h3>
          <button onClick={() => handleChange(1)}>Add 1</button>
