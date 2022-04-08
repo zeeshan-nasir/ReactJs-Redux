@@ -8,12 +8,12 @@ function App() {
     <div className="App">
       <Heading title="Mobile Operating System" />
       {os.map(e => {
-        return <Oper name={e} />
+        return <List name={e} />
       })}
 
       <Heading title="Mobile Manufacturers" />
       {company.map(e => {
-        return <Oper name={e} />
+        return <List name={e} />
       })}
     </div>
   );
@@ -23,8 +23,8 @@ const Heading = (props) => {
   return <h1>{props.title}</h1>
 }
 
-const Oper = (props) => {
-  return <li id="list">{props.name}</li>
+const List = (props) => {
+  return <li className="list">{props.name}</li>
 }
 
 export default App;
