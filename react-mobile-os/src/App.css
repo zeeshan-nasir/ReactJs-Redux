@@ -1,8 +1,21 @@
 .list {
-  margin-left: 40px;
+   margin-left: 40px;
 }
 
 h1 {
-  margin-left: 20px;
+   margin-left: 20px;
+}
 
+.square {
+   list-style-type: square;
+   margin-left: 40px;
+}
+
+.circle {
+   list-style-type: circle;
+   margin-left: 40px;
+}
+
+.disc {
+   margin-left: 40px;
 }
