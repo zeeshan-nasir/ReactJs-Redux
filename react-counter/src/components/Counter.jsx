@@ -6,17 +6,19 @@ const Counter = () => {
    const [color, setColor] = useState("green");
 
    const handleChange = (value) => {
-      setCount(count + value);
-      if ((count + value) % 2 === 0) {
+      if (value === 2) {
+         setCount(count * value);
          setColor("green");
       }
       else {
-         setColor("red")
+         setCount(count + value);
+         if ((count + value) % 2 === 0) {
+            setColor("green");
+         }
+         else {
+            setColor("red")
+         }
       }
-   }
-
-   const double = () => {
-      setCount(count * 2);
    }
 
    return (
@@ -25,7 +27,7 @@ const Counter = () => {
          <h2 className={color}>{count}</h2>
          <button onClick={() => handleChange(1)}>Add</button>
          <button onClick={() => handleChange(-1)}>Subtract</button>
-         <button onClick={() => double()}>Double</button>
+         <button onClick={() => handleChange(2)}>Double</button>
       </div>
    )
 }

@@ -33,11 +33,11 @@ function App() {
 
    const handleChange = (value) => {
       setCounter(counter + value)
+      if (counter >= 10) {
+         return <h2>You exceeded the maximum value!</h2>;
+      }
    }
 
-   if (counter >= 10) {
-      return <h2>You exceeded the maximum value!</h2>;
-   }
 
    return (
       < div className="App" >
