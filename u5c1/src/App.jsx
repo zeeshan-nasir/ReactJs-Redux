@@ -11,10 +11,16 @@ function App() {
    const [win, setWin] = useState("");
 
    const handleChange = (value, name) => {
+      if (data.score > 100 || data.wicket >= 12) {
+         return;
+      }
+
       data[`${name}`] += value;
+
       if (data.score > 100) {
          setWin("India Won");
       }
+
       setData({ ...data });
    }
 
