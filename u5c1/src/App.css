@@ -1,0 +1,38 @@
+.App {
+   width: 31%;
+   margin: auto;
+   margin-top: 90px;
+   border: 1px solid rgb(194, 192, 192);
+   padding: 30px;
+   border-radius: 15px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+button {
+   width: 100px;
+   background-color: rgb(199, 58, 58);
+   margin: 15px;
+   height: 35px;
+   border: 1px solid rgb(199, 58, 58);
+   border-radius: 15px;
+   color: white;
+   cursor: pointer;
+}
+
+button:hover {
+   box-shadow: rgb(199, 58, 58) 0px 0px 10px;
+   transition: .3s;
+}
+
+.banner {
+   display: flex;
+   justify-content: space-between;
+}
+
+.left1 {
+   margin-left: 35px;
+}
+
+.addScore1 {
+   margin-left: 25px;
+}
