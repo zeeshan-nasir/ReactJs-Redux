@@ -7,8 +7,8 @@ export default function TodoInput({ getData }) {
       <div>
          <input onChange={(e) => {
             setText(e.target.value);
-         }}
-            type="text" placeholder='Enter Todo' />
+         }} type="text" placeholder='Enter Todo' />
+
          <button onClick={() => { getData(text) }}>Add todo</button>
       </div>
    )
