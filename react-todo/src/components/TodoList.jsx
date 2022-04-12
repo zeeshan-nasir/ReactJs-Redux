@@ -10,10 +10,20 @@ const TodoList = ({ addItem }) => {
          }}
             onKeyPress={e => {
                if (e.key === "Enter") {
-                  addItem(text);
+                  const data = {
+                     title: text,
+                     status: false
+                  };
+                  addItem(data);
                }
             }} className='input' type="text" placeholder='Write Something' />
-         <button onClick={() => { addItem(text) }}>Add</button>
+         <button onClick={() => {
+            const data = {
+               title: text,
+               status: false
+            };
+            addItem(data);
+         }} className="btn1">Add</button>
       </div>
    )
 }
