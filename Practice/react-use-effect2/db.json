@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Learn React"
+    },
+    {
+      "id": 2,
+      "title": "Learn Typescript"
+    },
+    {
+      "title": " To walk",
+      "id": 3
+    },
+    {
+      "title": "To run",
+      "id": 4
+    },
+    {
+      "title": "Learn to be a chad",
+      "id": 5
+    }
+  ]
+}
