@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "./todo.css";
 import TodoList from './TodoList';
 
@@ -9,16 +9,14 @@ export default function Todo() {
    const addItem = (data) => {
       // console.log(data);
       setTodos([...todos, data]);
-      console.log(checked);
+      console.log(todos);
    }
 
    const checkFunc = (position) => {
-      const updated = checked.map((e, index) =>
-         index === position ? !e : e
-      );
-      // console.log(todos);
-      // console.log(updated);
-      setChecked(updated);
+      checked[position] = !checked[position];
+      console.log(checked);
+      console.log(todos);
+      setChecked(checked);
    }
 
    return (
@@ -29,7 +27,7 @@ export default function Todo() {
             <div className="allT">
                {
                   todos.map((e, index) => {
-                     return <div className={checked === true ? "itemChecked" : 'item'}><input onChange={() => { checkFunc(index) }} type="checkbox" className="check" /> {e.title}</div>
+                     return <div className={checked[index] === true ? "itemChecked" : 'item'}><input onChange={() => { checkFunc(index) }} type="checkbox" className="check" /> {e.title}</div>
                   })
                }
             </div>
