@@ -1,16 +1,29 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Counter from "./Counter";
 
 const Todo = () => {
    const [todos, setTodos] = useState([]);
    const [text, setText] = useState("");
+   const [page, setPage] = useState(1);
 
    useEffect(() => {
+      const getData = async () => {
+         let data = await fetch(`http://localhost:8080/todos?_page=${page}&_limit=2`);
+         data = await data.json();
+         setTodos(data);
+      };
+      console.log("Mounted Todo's");
       getData();
-   }, []);
+
+      return function cleanup() {
+         console.log("Todo is unmounted");
+      }
+
+   }, [page]);
 
    const getData = async () => {
-      let data = await fetch("http://localhost:8080/todos");
+      let data = await fetch(`http://localhost:8080/todos?_page=${page}&_limit=2`);
       data = await data.json();
       setTodos(data);
    };
@@ -23,7 +36,7 @@ const Todo = () => {
          <button onClick={() => {
             const payload = {
                title: text,
-               // status: false,
+               status: false,
             };
             fetch("http://localhost:8080/todos", {
                method: "POST",
@@ -41,6 +54,10 @@ const Todo = () => {
                {todo.id}. {todo.title}
             </div>
          ))}
+         <button onClick={() => { setPage(page - 1) }}>Prev</button>
+         <button onClick={() => { setPage(page + 1) }}>Next</button>
+         <Counter />
+
       </div>
    );
 };

@@ -1,4 +1,5 @@
 // import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Todos from './components/Todos';
 // import Hello from './components/Hello';
@@ -86,9 +87,12 @@ import Todos from './components/Todos';
 
 
 function App() {
+   const [show, setShow] = useState(true);
+
    return (
       <div className="App">
-         <Todos />
+         {show ? <Todos /> : null}
+         <button onClick={() => { setShow(!show) }}>{show ? "Hide" : "Show"}</button>
       </div>
    );
 }
