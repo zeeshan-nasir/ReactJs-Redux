@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const Timer = ({ start, end }) => {
    const [count, setCount] = useState(start);
@@ -9,7 +9,7 @@ const Timer = ({ start, end }) => {
       // if (active == true) {
       let id = setInterval(() => {
          setCount((preValue) => {
-            console.log("object");
+            // console.log("object");
             if (preValue >= end) {
                clearInterval(id);
                return end;
@@ -21,18 +21,18 @@ const Timer = ({ start, end }) => {
 
       return () => {
          clearInterval(id);
-      }
-   }, [])
+      };
+   });
 
    return (
-      <div className='timer'>
+      <div className="timer">
          <h1>Timer</h1>
-         <div className='time'>
+         <div className="time">
             <h2>{count}</h2>
          </div>
          {/* <button className='btn' onClick={setActive(false)}>Start Timer</button> */}
       </div>
-   )
-}
+   );
+};
 
 export default Timer;
