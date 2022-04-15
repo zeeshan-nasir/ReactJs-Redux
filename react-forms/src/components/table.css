@@ -1,0 +1,21 @@
+.tableDiv {
+   width: 60%;
+   padding: 2%;
+   text-align: center;
+   border: 1px solid rgb(223, 223, 223);
+}
+
+h1 {
+   margin-bottom: 50px;
+}
+
+table {
+   width: 100%;
+}
+
+table,
+td,
+th,
+tr {
+   border: 1px solid black;
+}
