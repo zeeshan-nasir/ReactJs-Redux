@@ -4,7 +4,7 @@ const Form = () => {
    const [formData, setFormData] = useState({
       userName: "",
       age: "",
-      email: ""
+      email: "",
    });
 
    const handleChange = (e) => {
@@ -28,7 +28,7 @@ const Form = () => {
          },
          body: JSON.stringify(formData),
       });
-   }
+   };
 
    return (
       <div>
