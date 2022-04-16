@@ -18,26 +18,26 @@ const RestaurantDetails = () => {
 
    // To fetch and update the data
 
-   // const getData = async () => {
-   //    let fetched = await fetch("http://localhost:8080/data");
-   //    fetched = await fetched.json();
-   //    // console.log("fetched:", fetched);
-   //    setData([...data, ...fetched]);
-   // };
+   const getData = async () => {
+      let fetched = await fetch("http://localhost:8080/data");
+      fetched = await fetched.json();
+      // console.log("fetched:", fetched);
+      setData([...data, ...fetched]);
+   };
 
    useEffect(() => {
-      // getData();
-   }, []);
+      getData();
+   }, [setData]);
 
    // To fetch and add the form data
 
    const handleChange = (e) => {
-      const { id, value } = e.target;
+      const { name, value } = e.target;
 
       console.log(e.target.value);
       setForm({
          ...form,
-         [id]: value,
+         [name]: value,
       });
    };
 
@@ -57,11 +57,13 @@ const RestaurantDetails = () => {
    // To sort data
 
    const handleSort = (stars) => {
+      getData();
+
       let sorted = data.filter((e) => {
          return e.rating > stars;
       });
-
-      setData([...sorted]);
+      console.log(sorted);
+      setData(sorted);
    };
 
    return (
@@ -72,28 +74,28 @@ const RestaurantDetails = () => {
                <input
                   onChange={handleChange}
                   type="text"
-                  id="name"
+                  name="name"
                   placeholder="Enter name"
                />
                <input
                   onChange={handleChange}
                   type="text"
-                  id="cuisine"
+                  name="cuisine"
                   placeholder="Enter cuisine"
                />
                <input
                   onChange={handleChange}
                   type="text"
-                  id="cost"
+                  name="cost"
                   placeholder="Enter cost"
                />
                <input
                   onChange={handleChange}
                   type="text"
-                  id="minPrice"
+                  name="minPrice"
                   placeholder="Enter price"
                />
-               <select onChange={handleChange} id="paymentMethods">
+               <select onChange={handleChange} name="paymentMethods">
                   <option value="">Payment Methods</option>
                   <option value="Accepts online and COD payments">
                      Accepts online and COD payments
@@ -105,25 +107,25 @@ const RestaurantDetails = () => {
                <input
                   onChange={handleChange}
                   type="text"
-                  id="rating"
+                  name="rating"
                   placeholder="Enter rating"
                />
                <input
                   onChange={handleChange}
                   type="text"
-                  id="votes"
+                  name="votes"
                   placeholder="Number of votes"
                />
                <input
                   onChange={handleChange}
                   type="text"
-                  id="reviews"
+                  name="reviews"
                   placeholder="Number of reviews"
                />
                <input
                   onChange={handleChange}
                   type="text"
-                  id="image"
+                  name="image"
                   placeholder="Enter url"
                />
                <input type="submit" className="submit" />
@@ -133,16 +135,36 @@ const RestaurantDetails = () => {
          {/* Sort buttons */}
 
          <div className="btnDiv">
-            <button className="oneBtn" onClick={handleSort(1)}>
+            <button
+               className="oneBtn"
+               onClick={() => {
+                  handleSort(1);
+               }}
+            >
                1 star
             </button>
-            <button className="twoBtn" onClick={handleSort(2)}>
+            <button
+               className="twoBtn"
+               onClick={() => {
+                  handleSort(2);
+               }}
+            >
                2 star
             </button>
-            <button className="threeBtn" onClick={handleSort(3)}>
+            <button
+               className="threeBtn"
+               onClick={() => {
+                  handleSort(3);
+               }}
+            >
                3 star
             </button>
-            <button className="fourBtn" onClick={handleSort(4)}>
+            <button
+               className="fourBtn"
+               onClick={() => {
+                  handleSort(4);
+               }}
+            >
                4 star
             </button>
          </div>
