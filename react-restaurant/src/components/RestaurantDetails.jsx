@@ -5,7 +5,6 @@ const RestaurantDetails = () => {
    const [data, setData] = useState([]);
    const [flags, setFlags] = useState([false, false, false, false]);
    const [paymentFlags, setPaymentFlags] = useState([false, false, false]);
-   const [sortFlags, setSortFlags] = useState([false, false]);
 
    const [form, setForm] = useState({
       name: "",
@@ -100,14 +99,16 @@ const RestaurantDetails = () => {
          let sorted = data.sort((a, b) => {
             return a.minPrice - b.minPrice;
          });
-         // console.log(sorted);
-         setData(sorted);
+         console.log(sorted);
+         let newData = [...sorted];
+         setData(newData);
       } else {
          let sorted = data.sort((a, b) => {
             return b.minPrice - a.minPrice;
          });
-         // console.log(sorted);
-         setData(sorted);
+         console.log(sorted);
+         let newData = [...sorted];
+         setData(newData);
       }
    };
 
