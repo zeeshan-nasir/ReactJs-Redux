@@ -22,7 +22,7 @@ const Form = () => {
    };
 
    const handleSubmit = (e) => {
-      e.preventDefault();
+      // e.preventDefault();
 
       fetch("http://localhost:8080/data", {
          method: "POST",
