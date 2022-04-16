@@ -1,0 +1,152 @@
+.cardBox {
+   width: 85%;
+   margin: auto;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   margin-top: 50px;
+   margin-bottom: 50px;
+   grid-gap: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+   border: 1px solid rgb(221, 221, 221);
+   height: 200px;
+}
+
+img {
+   width: 100%;
+   padding: 5px;
+   object-fit: contain;
+}
+
+.upperDiv {
+   display: flex;
+   height: 80%;
+}
+
+.imageDiv {
+   width: 40%;
+}
+
+.dataDiv {
+   width: 50%;
+   padding: 5px 10px;
+}
+
+.dataDiv>p {
+   margin: 0px 5px 6px;
+}
+
+.name {
+   color: rgb(223, 0, 0);
+   font-weight: bold;
+   font-size: 1.1em;
+}
+
+.greyText {
+   color: rgb(110, 110, 110);
+   font-size: .8em;
+}
+
+.blackText {
+   font-size: .8em;
+}
+
+.ratingDiv {
+   padding: 5px;
+   display: flex;
+   width: 22%;
+   flex-direction: column;
+   align-items: center;
+}
+
+.ratingDiv>p {
+   margin: 0px;
+   font-size: .8em;
+   margin-bottom: 7px;
+}
+
+.rating {
+   background-color: rgb(114, 160, 43);
+   border-radius: 5px;
+   width: 20px;
+   padding: 5px 5px 4px 6px;
+   color: white;
+   font-size: 1.5em;
+}
+
+.lowerDiv {
+   border-top: 1px solid rgb(221, 221, 221);
+   height: 20%;
+   padding-right: 10px;
+   text-align: right;
+   line-height: 20%;
+   color: rgb(114, 160, 43);
+}
+
+.lowerDiv>p {
+   height: 100%;
+}
+
+/* Form */
+
+.formDiv {
+   width: 84%;
+   margin: auto;
+   margin-top: 30px;
+   border: 1px solid rgb(219, 219, 219);
+   text-align: center;
+   padding: 2%;
+}
+
+form {
+   display: flex;
+}
+
+input {
+   width: 90%;
+   margin-bottom: 25px;
+   margin-left: 10px;
+   height: 27px;
+}
+
+.submit {
+   width: 30%;
+   height: 30px;
+   border-radius: 10px;
+   color: white;
+   background-color: rgb(114, 160, 43);
+   border: 1px solid rgb(114, 160, 43);
+   cursor: pointer;
+}
+
+select {
+   height: 33px;
+   margin-left: 10px;
+   width: 140px;
+}
+
+h1 {
+   margin-bottom: 50px;
+}
+
+/* Sort buttons */
+
+.btnDiv{
+   text-align: center;
+}
+
+.oneBtn,
+.twoBtn,
+.threeBtn,
+.fourBtn {
+   width: 60px;
+   height: 30px;
+   border-radius: 10px;
+   color: white;
+   background-color: rgb(114, 160, 43);
+   border: 1px solid rgb(114, 160, 43);
+   cursor: pointer;
+   margin: 50px 50px 20px;
+}

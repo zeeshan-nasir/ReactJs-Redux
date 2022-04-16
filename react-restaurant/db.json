@@ -1,0 +1,224 @@
+{
+   "data": [
+      {
+         "name": "Crossroads Systems, Inc.",
+         "cuisine": "Indian",
+         "cost": 400,
+         "minPrice": 50,
+         "paymentMethods": "Accepts online payments only",
+         "rating": 3.1,
+         "votes": 567,
+         "reviews": 192,
+         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkGOlEHYTaUe6g7wTBlwcRu63Ykg-1thM_DQ&usqp=CAU"
+      },
+      {
+         "name": "Apollo Endosurgery, Inc.",
+         "cuisine": "Italian",
+         "cost": 200,
+         "minPrice": 200,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 2.8,
+         "votes": 231,
+         "reviews": 467,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "Griffin Industrial Realty, Inc.",
+         "cuisine": "Chinese",
+         "cost": 200,
+         "minPrice": 100,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 2.8,
+         "votes": 231,
+         "reviews": 192,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "Tata Motors Ltd",
+         "cuisine": "Italian",
+         "cost": 100,
+         "minPrice": 200,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 3.6,
+         "votes": 567,
+         "reviews": 345,
+         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkGOlEHYTaUe6g7wTBlwcRu63Ykg-1thM_DQ&usqp=CAU"
+      },
+      {
+         "name": "SI Financial Group, Inc.",
+         "cuisine": "American",
+         "cost": 200,
+         "minPrice": 50,
+         "paymentMethods": "Accepts online payments only",
+         "rating": 4.2,
+         "votes": 567,
+         "reviews": 467,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "Cerner Corporation",
+         "cuisine": "Italian",
+         "cost": 300,
+         "minPrice": 100,
+         "paymentMethods": "Accepts online payments only",
+         "rating": 3.6,
+         "votes": 231,
+         "reviews": 345,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "Banc of California, Inc.",
+         "cuisine": "Japanese",
+         "cost": 600,
+         "minPrice": 150,
+         "paymentMethods": "Accepts online payments only",
+         "rating": 2.8,
+         "votes": 345,
+         "reviews": 467,
+         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkGOlEHYTaUe6g7wTBlwcRu63Ykg-1thM_DQ&usqp=CAU"
+      },
+      {
+         "name": "ABM Industries Incorporated",
+         "cuisine": "Indian",
+         "cost": 100,
+         "minPrice": 150,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 3.6,
+         "votes": 567,
+         "reviews": 345,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "ProPhase Labs, Inc.",
+         "cuisine": "Chinese",
+         "cost": 600,
+         "minPrice": 50,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 4.2,
+         "votes": 745,
+         "reviews": 539,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "NextEra Energy, Inc.",
+         "cuisine": "Italian",
+         "cost": 400,
+         "minPrice": 200,
+         "paymentMethods": "Accepts online payments only",
+         "rating": 2.8,
+         "votes": 145,
+         "reviews": 192,
+         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkGOlEHYTaUe6g7wTBlwcRu63Ykg-1thM_DQ&usqp=CAU"
+      },
+      {
+         "name": "Boardwalk Pipeline Part",
+         "cuisine": "Italian",
+         "cost": 200,
+         "minPrice": 200,
+         "paymentMethods": "Accepts online payments only",
+         "rating": 3.1,
+         "votes": 745,
+         "reviews": 467,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "Duke Energy",
+         "cuisine": "Indian",
+         "cost": 300,
+         "minPrice": 100,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 3.1,
+         "votes": 231,
+         "reviews": 539,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "ANSYS, Inc.",
+         "cuisine": "Italian",
+         "cost": 100,
+         "minPrice": 150,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 3.6,
+         "votes": 745,
+         "reviews": 547,
+         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkGOlEHYTaUe6g7wTBlwcRu63Ykg-1thM_DQ&usqp=CAU"
+      },
+      {
+         "name": "Aerie Pharmaceuticals",
+         "cuisine": "Indian",
+         "cost": 100,
+         "minPrice": 200,
+         "paymentMethods": "Accepts online payments only",
+         "rating": 3.6,
+         "votes": 567,
+         "reviews": 467,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "M III Acquisition",
+         "cuisine": "Italian",
+         "cost": 600,
+         "minPrice": 150,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 4.2,
+         "votes": 145,
+         "reviews": 467,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "Resource Capital",
+         "cuisine": "Chinese",
+         "cost": 600,
+         "minPrice": 100,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 3.1,
+         "votes": 345,
+         "reviews": 467,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "StoneCastle Financial",
+         "cuisine": "American",
+         "cost": 100,
+         "minPrice": 200,
+         "paymentMethods": "Accepts online payments only",
+         "rating": 4.2,
+         "votes": 745,
+         "reviews": 467,
+         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkGOlEHYTaUe6g7wTBlwcRu63Ykg-1thM_DQ&usqp=CAU"
+      },
+      {
+         "name": "Marathon Petroleum",
+         "cuisine": "American",
+         "cost": 100,
+         "minPrice": 50,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 3.1,
+         "votes": 745,
+         "reviews": 192,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "Univest Corporation",
+         "cuisine": "American",
+         "cost": 100,
+         "minPrice": 150,
+         "paymentMethods": "Accepts online payments only",
+         "rating": 2.8,
+         "votes": 567,
+         "reviews": 547,
+         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/nutty-chicken-sate-strips-67269e0.jpg"
+      },
+      {
+         "name": "India Nifty 50 Index",
+         "cuisine": "American",
+         "cost": 400,
+         "minPrice": 150,
+         "paymentMethods": "Accepts online and COD payments",
+         "rating": 3.6,
+         "votes": 567,
+         "reviews": 539,
+         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkGOlEHYTaUe6g7wTBlwcRu63Ykg-1thM_DQ&usqp=CAU"
+      }
+   ]
+}
