@@ -3,6 +3,9 @@ import "./rest.css";
 
 const RestaurantDetails = () => {
    const [data, setData] = useState([]);
+   const [flags, setFlags] = useState([false, false, false, false]);
+   const [paymentFlags, setPaymentFlags] = useState([false, false, false]);
+   const [sortFlags, setSortFlags] = useState([false, false]);
 
    const [form, setForm] = useState({
       name: "",
@@ -22,7 +25,7 @@ const RestaurantDetails = () => {
       let fetched = await fetch("http://localhost:8080/data");
       fetched = await fetched.json();
       // console.log("fetched:", fetched);
-      setData([...data, ...fetched]);
+      setData(fetched);
    };
 
    useEffect(() => {
@@ -54,16 +57,58 @@ const RestaurantDetails = () => {
       });
    };
 
+   // To filter data
+
+   const handleFilter = (stars) => {
+      flags[stars - 1] = !flags[stars - 1];
+      setFlags(flags);
+      // console.log(flags);
+
+      if (flags[stars - 1] === true) {
+         let filtered = data.filter((e) => {
+            return e.rating > stars;
+         });
+         // console.log(filtered);
+         setData(filtered);
+      } else {
+         getData();
+      }
+   };
+
+   // To filter data as per payment type
+
+   const handlePayment = (index, type) => {
+      paymentFlags[index] = !paymentFlags[index];
+      setPaymentFlags(paymentFlags);
+      // console.log(paymentFlags);
+
+      if (paymentFlags[index] === true) {
+         let filtered = data.filter((e) => {
+            return e.paymentMethods === type;
+         });
+         // console.log(filtered);
+         setData(filtered);
+      } else {
+         getData();
+      }
+   };
+
    // To sort data
 
-   const handleSort = (stars) => {
-      getData();
-
-      let sorted = data.filter((e) => {
-         return e.rating > stars;
-      });
-      console.log(sorted);
-      setData(sorted);
+   const handleSort = (type) => {
+      if (type === 0) {
+         let sorted = data.sort((a, b) => {
+            return a.minPrice - b.minPrice;
+         });
+         // console.log(sorted);
+         setData(sorted);
+      } else {
+         let sorted = data.sort((a, b) => {
+            return b.minPrice - a.minPrice;
+         });
+         // console.log(sorted);
+         setData(sorted);
+      }
    };
 
    return (
@@ -132,41 +177,98 @@ const RestaurantDetails = () => {
             </form>
          </div>
 
-         {/* Sort buttons */}
+         {/* All buttons */}
 
-         <div className="btnDiv">
-            <button
-               className="oneBtn"
-               onClick={() => {
-                  handleSort(1);
-               }}
-            >
-               1 star
-            </button>
-            <button
-               className="twoBtn"
-               onClick={() => {
-                  handleSort(2);
-               }}
-            >
-               2 star
-            </button>
-            <button
-               className="threeBtn"
-               onClick={() => {
-                  handleSort(3);
-               }}
-            >
-               3 star
-            </button>
-            <button
-               className="fourBtn"
-               onClick={() => {
-                  handleSort(4);
-               }}
-            >
-               4 star
-            </button>
+         <div className="allBtns">
+            {/* Filter buttons */}
+
+            <div className="btnDiv">
+               <h3>Sort as per rating:</h3>
+               <button
+                  className="oneBtn"
+                  onClick={() => {
+                     handleFilter(1);
+                  }}
+               >
+                  1 star
+               </button>
+               <button
+                  className="twoBtn"
+                  onClick={() => {
+                     handleFilter(2);
+                  }}
+               >
+                  2 star
+               </button>
+               <button
+                  className="threeBtn"
+                  onClick={() => {
+                     handleFilter(3);
+                  }}
+               >
+                  3 star
+               </button>
+               <button
+                  className="fourBtn"
+                  onClick={() => {
+                     handleFilter(4);
+                  }}
+               >
+                  4 star
+               </button>
+            </div>
+
+            {/* Payment filter buttons */}
+
+            <div className="btnDiv">
+               <h3>Sort as per payment methods:</h3>
+               <button
+                  className="oneBtn"
+                  onClick={() => {
+                     handlePayment(0, "Accepts online payments only");
+                  }}
+               >
+                  Online
+               </button>
+               <button
+                  className="twoBtn"
+                  onClick={() => {
+                     handlePayment(1, "Accepts COD payments only");
+                  }}
+               >
+                  COD
+               </button>
+               <button
+                  className="threeBtn"
+                  onClick={() => {
+                     handlePayment(2, "Accepts online and COD payments");
+                  }}
+               >
+                  All
+               </button>
+            </div>
+
+            {/* 2 person cost buttons */}
+
+            <div className="btnDiv">
+               <h3>Sort as per cost:</h3>
+               <button
+                  className="oneBtn"
+                  onClick={() => {
+                     handleSort(0);
+                  }}
+               >
+                  L to H
+               </button>
+               <button
+                  className="twoBtn"
+                  onClick={() => {
+                     handleSort(1);
+                  }}
+               >
+                  H to L
+               </button>
+            </div>
          </div>
 
          <div className="cardBox">

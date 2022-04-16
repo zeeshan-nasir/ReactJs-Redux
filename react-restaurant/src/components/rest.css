@@ -133,7 +133,7 @@ h1 {
 
 /* Sort buttons */
 
-.btnDiv{
+.btnDiv {
    text-align: center;
 }
 
@@ -148,5 +148,10 @@ h1 {
    background-color: rgb(114, 160, 43);
    border: 1px solid rgb(114, 160, 43);
    cursor: pointer;
-   margin: 50px 50px 20px;
+   margin: 20px 14px 20px;
+}
+
+.allBtns {
+   display: flex;
+   justify-content: space-around;
 }
