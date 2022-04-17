@@ -18,7 +18,7 @@ const RestaurantDetails = () => {
 
    useEffect(() => {
       getData();
-   }, [setData]);
+   }, []);
 
    return (
       <div>
