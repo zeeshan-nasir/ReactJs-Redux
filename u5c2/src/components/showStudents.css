@@ -1,0 +1,16 @@
+.body{
+   width: 40%;
+   margin: auto;
+   margin-top: 10px;
+}
+
+.controls{
+   display: flex;
+   justify-content: center;
+   margin-bottom: 20px;
+   gap: 40px;
+}
+
+.table,tr,td,th{
+   border: 1px solid black;
+}
