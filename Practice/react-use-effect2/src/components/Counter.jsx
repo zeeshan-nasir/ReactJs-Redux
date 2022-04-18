@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React from "react";
+import { useState, useEffect } from "react";
 
 const Counter = () => {
    const [count, setCount] = useState(10);
@@ -17,15 +17,14 @@ const Counter = () => {
 
       return () => {
          clearInterval(id);
-      }
+      };
    }, []);
-
 
    return (
       <div>
          <h3>Count: {count}</h3>
       </div>
-   )
-}
+   );
+};
 
 export default Counter;
