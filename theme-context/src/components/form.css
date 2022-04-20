@@ -1,0 +1,47 @@
+.formDiv {
+   width: 30%;
+   margin: auto;
+   margin-top: 50px;
+   border: 1px solid rgb(219, 219, 219);
+   text-align: center;
+   padding: 2%;
+}
+
+input {
+   width: 90%;
+   margin-bottom: 25px;
+   height: 27px;
+}
+
+select {
+   margin-bottom: 25px;
+   margin-left: 34%;
+   height: 32px;
+}
+
+.statusBox {
+   display: flex;
+   margin-bottom: 25px;
+   gap: 22px;
+   justify-content: space-between;
+}
+
+.statusBox>label {
+   width: 350px;
+}
+
+.submit {
+   width: 30%;
+   height: 30px;
+   border: 1px solid;
+   cursor: pointer;
+}
+
+h1 {
+   margin-bottom: 50px;
+}
+
+.unmarried,
+.married {
+   margin-left: -40px;
+}
