@@ -1,0 +1,20 @@
+.coral {
+   background-color: coral;
+   height: 600px;
+   width: 100%;
+}
+
+.purple {
+   background-color: rgb(189, 23, 211);
+   height: 600px;
+   width: 100%;
+}
+
+.text {
+   color: white;
+   font-size: 5rem;
+   align-items: center;
+   display: flex;
+   justify-content: center;
+   cursor: pointer;
+}
