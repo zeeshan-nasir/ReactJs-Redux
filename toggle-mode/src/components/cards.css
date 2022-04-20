@@ -3,7 +3,18 @@
    margin-bottom: 25px;
 }
 
+.darkCard {
+   border-bottom: 1px solid rgb(223, 223, 223);
+   margin-bottom: 25px;
+   background: #292E33;
+   color: white;
+}
+
 .card:last-child {
+   border-bottom: none;
+}
+
+.darkCard:last-child {
    border-bottom: none;
 }
 

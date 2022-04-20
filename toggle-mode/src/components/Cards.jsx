@@ -2,9 +2,9 @@ import React from "react";
 import { BsThreeDots } from "react-icons/bs";
 import "./cards.css";
 
-const Cards = ({ image, name, level, points }) => {
+const Cards = ({ image, name, level, points, isDarkMode }) => {
    return (
-      <div className="card">
+      <div className={isDarkMode === false ? "card" : "darkCard"}>
          <div className="upper">
             <div className="imageDiv">
                <img src={image} alt="" />

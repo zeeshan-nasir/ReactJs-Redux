@@ -3,6 +3,12 @@
    width: 100%;
 }
 
+.darkDash {
+   background: #1F2327;
+   color: white;
+   width: 100%;
+}
+
 .heading {
    display: flex;
    align-items: center;
@@ -10,6 +16,16 @@
    width: 400px;
    justify-content: space-between;
    margin-bottom: 15px;
+}
+
+.darkHeading {
+   display: flex;
+   align-items: center;
+   margin-left: 40px;
+   width: 400px;
+   justify-content: space-between;
+   margin-bottom: 15px;
+
 }
 
 h1 {
@@ -86,6 +102,17 @@ input:checked+.slider:before {
    min-height: 100px;
    padding: 1px 15px 1px;
    box-sizing: border-box;
+}
+
+.darkCardDiv {
+   margin-left: 40px;
+   width: 400px;
+   background-color: white;
+   min-height: 100px;
+   padding: 1px 15px 1px;
+   box-sizing: border-box;
+   background: #292E33;
+   color: white;
 }
 
 h3 {
