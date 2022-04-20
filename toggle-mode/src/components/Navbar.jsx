@@ -1,7 +1,7 @@
 import React from "react";
 import { ImStatsBars2 } from "react-icons/im";
 import { BsSignpost } from "react-icons/bs";
-import { GrBasket } from "react-icons/gr";
+import { BsBasket3 } from "react-icons/bs";
 import { IoMdChatboxes } from "react-icons/io";
 import { IoAddCircleSharp } from "react-icons/io5";
 import { VscFiles } from "react-icons/vsc";
@@ -18,7 +18,7 @@ const Navbar = ({ isDarkMode }) => {
          />
          <ImStatsBars2 size={20} />
          <BsSignpost size={20} />
-         <GrBasket size={20} />
+         <BsBasket3 size={20} />
          <IoMdChatboxes size={20} />
          <VscFiles size={20} />
          <FiSettings size={20} />
