@@ -1,0 +1,27 @@
+.banner {
+   height: 80px;
+   background-color: rgb(245, 245, 247);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 90px;
+   font-size: 24px;
+}
+
+.imageDiv {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}
+
+.bold {
+   font-weight: 500;
+}
+
+.color {
+   color: rgb(87, 57, 170);
+}
+
+.bannerIcon {
+   width: 25px;
+}
