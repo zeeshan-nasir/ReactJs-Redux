@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import React, { useContext, useEffect, useState } from "react";
+import { Navigate, useParams } from "react-router";
+import { AuthContext } from "../contexts/AuthContext";
 
 const UserDetails = () => {
    const { id } = useParams();
    const [data, setData] = useState({});
+   const { isAuth } = useContext(AuthContext);
 
    const fetchData = async () => {
       let fetched = await fetch(`https://reqres.in/api/users/${id}`);
@@ -15,6 +17,10 @@ const UserDetails = () => {
    useEffect(() => {
       fetchData();
    }, []);
+
+   if (!isAuth) {
+      return <Navigate to={"/login"} />;
+   }
 
    return (
       <div
@@ -35,7 +41,6 @@ const UserDetails = () => {
                justifyContent: "center",
             }}
          >
-            Profile Picture:{" "}
             <img
                style={{
                   borderRadius: "50%",

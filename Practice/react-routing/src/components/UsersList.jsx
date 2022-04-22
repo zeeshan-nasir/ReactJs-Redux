@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+// const useQuery = (q) => {
+//    const param = new URLSearchParams(window.location.search);
+//    return param.get(q);
+// };
+
 const UsersList = () => {
    const [data, setData] = useState([]);
 
