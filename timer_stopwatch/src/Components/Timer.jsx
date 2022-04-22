@@ -8,8 +8,11 @@ const Timer = () => {
    const [min, setMin] = useState(4);
    const [sec, setSec] = useState(59);
 
+   const [stopMin, setStopMin] = useState(0);
    const [stopSec, setStopSec] = useState(0);
    const [millisec, setMillisec] = useState(0);
+
+   // Timer useeffect
 
    useEffect(() => {
       let id = setInterval(() => {
@@ -35,15 +38,21 @@ const Timer = () => {
       };
    }, [min]);
 
+   // Stopwatch useeffect
+
    useEffect(() => {
       let id = setInterval(() => {
          setMillisec((value) => {
-            if (stopSec === 59 && value === 1000) {
-               clearInterval(id);
+            if (stopSec === 59 && value === 99) {
+               setStopSec(0);
+               setMillisec(0);
+               setStopMin((min) => {
+                  return min + 1;
+               });
                return 0;
             }
 
-            if (value === 9999) {
+            if (value === 99) {
                setMillisec(0);
                setStopSec((v) => {
                   return v + 1;
@@ -52,7 +61,7 @@ const Timer = () => {
 
             return value + 1;
          });
-      }, 1);
+      }, 10);
 
       return () => {
          clearInterval(id);
@@ -78,19 +87,36 @@ const Timer = () => {
          {mode === "timer" ? (
             <div className="countDiv">
                <span className="font">{min}</span> m{" "}
-               <span className="font">{sec}</span>s
+               <span className="font">
+                  {sec < 10 ? "0" : null}
+                  {sec}
+               </span>
+               s
             </div>
          ) : (
             <div className="countDiv">
+               <span className="font">{stopMin}</span> m{" "}
                <span className="font">{stopSec}</span> s{" "}
-               <span className="font">{millisec}</span>
+               <span className="font">
+                  {millisec < 10 ? "0" : null}
+                  {millisec}
+               </span>
+               ms
             </div>
          )}
-         <div className="btnDiv">
-            <Button>Start</Button>
-            <Button>Stop</Button>
-            <Button>Reset</Button>
-         </div>
+         {mode === "timer" ? (
+            <div className="btnDiv">
+               <Button>Start</Button>
+               <Button>Stop</Button>
+               <Button>Reset</Button>
+            </div>
+         ) : (
+            <div className="btnDiv">
+               <Button>Start</Button>
+               <Button>Stop</Button>
+               <Button>Reset</Button>
+            </div>
+         )}
       </div>
    );
 };
