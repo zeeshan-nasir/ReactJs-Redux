@@ -13,11 +13,11 @@ const Banner = () => {
             <p className="bold">iPhone 13</p>
          </div>
          <p className="color">
-            Starting from <span className="bold">67,500</span>
+            Starting from <span className="bold">₹ 67,500</span>
          </p>
          <p>
             Flat <span className="bold">10%</span> off +{" "}
-            <span className="bold">5,000*</span> cashback
+            <span className="bold">₹ 5,000*</span> cashback
          </p>
       </div>
    );

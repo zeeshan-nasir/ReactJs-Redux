@@ -1,0 +1,46 @@
+{
+   "store": [
+      {
+         "id": "1",
+         "image": "https://media.istockphoto.com/photos/iphone-13-pro-picture-id1364620309?k=20&m=1364620309&s=612x612&w=0&h=gFyMRQqWHo4xepvihjwaf2fnamr3KdUyoYdTG7Azllc=",
+         "model": "iPhone 13",
+         "price": "₹ 87,999",
+         "details": "iPhone 13 — available in Green, Pink, Blue, Midnight, Starlight and (. 15.4 cm or 13.7 cm. (6.1” or 5.4”) all-screen OLED display"
+      },
+      {
+         "id": "2",
+         "image": "https://m.media-amazon.com/images/I/61l9ppRIiqL._SX522_.jpg",
+         "model": "iPhone 13 pro",
+         "price": "₹ 97,999",
+         "details": "iPhone 13 — available in Green, Pink, Blue, Midnight, Starlight and (. 15.4 cm or 13.7 cm. (6.1” or 5.4”) all-screen OLED display"
+      },
+      {
+         "id": "3",
+         "image": "https://www.zdnet.com/a/img/resize/7364be4ca51faf520b17cd742ce7e0bfcb353ce0/2021/12/22/02460252-d42d-4f2f-88b6-1ee169a942b7/iphone-13-pro.png?width=1200&fit=bounds&format=pjpg&auto=webp",
+         "model": "iPhone 12",
+         "price": "₹ 77,999",
+         "details": "iPhone 13 — available in Green, Pink, Blue, Midnight, Starlight and (. 15.4 cm or 13.7 cm. (6.1” or 5.4”) all-screen OLED display"
+      },
+      {
+         "id": "4",
+         "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-family-select-2021?wid=940&hei=1112&fmt=jpeg&qlt=90&.v=1617135051000",
+         "model": "iPhone 12 pro",
+         "price": "₹ 67,999",
+         "details": "iPhone 13 — available in Green, Pink, Blue, Midnight, Starlight and (. 15.4 cm or 13.7 cm. (6.1” or 5.4”) all-screen OLED display"
+      },
+      {
+         "id": "5",
+         "image": "https://m.media-amazon.com/images/I/71gm8v4uPBL._SX522_.jpg",
+         "model": "iPhone 11",
+         "price": "₹ 57,999",
+         "details": "iPhone 13 — available in Green, Pink, Blue, Midnight, Starlight and (. 15.4 cm or 13.7 cm. (6.1” or 5.4”) all-screen OLED display"
+      },
+      {
+         "id": "6",
+         "image": "https://media.istockphoto.com/photos/iphone-13-pro-picture-id1364620309?k=20&m=1364620309&s=612x612&w=0&h=gFyMRQqWHo4xepvihjwaf2fnamr3KdUyoYdTG7Azllc=",
+         "model": "iPhone 11 pro",
+         "price": "₹ 47,999",
+         "details": "iPhone 13 — available in Green, Pink, Blue, Midnight, Starlight and (. 15.4 cm or 13.7 cm. (6.1” or 5.4”) all-screen OLED display"
+      }
+   ]
+}

@@ -1,0 +1,32 @@
+.card {
+   display: flex;
+   align-items: center;
+   width: 60%;
+   margin: auto;
+}
+
+.card>img {
+   width: 600px;
+   height: 500px;
+   object-fit: cover;
+}
+
+.cardDetails {
+   padding-right: 30px;
+   text-align: center;
+}
+
+.detailsBtn {
+   width: 120px;
+   border-radius: 5px;
+   border: 1px solid rgb(50, 50, 51);
+   background-color: rgb(50, 50, 51);
+   color: white;
+   height: 30px;
+   margin-top: 30px;
+   cursor: pointer;
+}
+
+.biggerText{
+   font-size: 24px;
+}

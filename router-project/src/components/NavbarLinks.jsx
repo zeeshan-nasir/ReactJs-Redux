@@ -23,6 +23,10 @@ const NavbarLinks = () => {
          title: "About Us",
          to: "about",
       },
+      {
+         title: "Login",
+         to: "login",
+      },
    ];
    return (
       <div>
