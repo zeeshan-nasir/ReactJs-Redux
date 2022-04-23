@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from "./Buttons";
 import "./timer.css";
 
 const Timer = () => {
    const [mode, setmode] = useState("timer");
 
-   const [min, setMin] = useState(4);
-   const [sec, setSec] = useState(59);
+   const [min, setMin] = useState(5);
+   const [sec, setSec] = useState(0);
 
    const [stopMin, setStopMin] = useState(0);
    const [stopSec, setStopSec] = useState(0);
    const [millisec, setMillisec] = useState(0);
 
-   // Timer useeffect
+   const stopTimer = useRef(null);
+   const stopWatch = useRef(null);
 
-   useEffect(() => {
-      let id = setInterval(() => {
+   // Timer
+
+   const startTimer = () => {
+      stopTimer.current = setInterval(() => {
          setSec((value) => {
             if (min === 0 && value === 0) {
-               clearInterval(id);
+               clearInterval(stopTimer.current);
                return 0;
             }
 
@@ -32,16 +35,12 @@ const Timer = () => {
             return value - 1;
          });
       }, 1000);
+   };
 
-      return () => {
-         clearInterval(id);
-      };
-   }, [min]);
+   // Stopwatch
 
-   // Stopwatch useeffect
-
-   useEffect(() => {
-      let id = setInterval(() => {
+   const startStopwatch = () => {
+      stopWatch.current = setInterval(() => {
          setMillisec((value) => {
             if (stopSec === 59 && value === 99) {
                setStopSec(0);
@@ -62,11 +61,7 @@ const Timer = () => {
             return value + 1;
          });
       }, 10);
-
-      return () => {
-         clearInterval(id);
-      };
-   }, [stopSec]);
+   };
 
    return (
       <div className="card">
@@ -106,15 +101,56 @@ const Timer = () => {
          )}
          {mode === "timer" ? (
             <div className="btnDiv">
-               <Button>Start</Button>
-               <Button>Stop</Button>
-               <Button>Reset</Button>
+               <Button
+                  onClick={() => {
+                     startTimer();
+                  }}
+               >
+                  Start
+               </Button>
+               <Button
+                  onClick={() => {
+                     clearInterval(stopTimer.current);
+                  }}
+               >
+                  Stop
+               </Button>
+               <Button
+                  onClick={() => {
+                     setMin(5);
+                     setSec(0);
+                     clearInterval(stopTimer.current);
+                  }}
+               >
+                  Reset
+               </Button>
             </div>
          ) : (
             <div className="btnDiv">
-               <Button>Start</Button>
-               <Button>Stop</Button>
-               <Button>Reset</Button>
+               <Button
+                  onClick={() => {
+                     startStopwatch();
+                  }}
+               >
+                  Start
+               </Button>
+               <Button
+                  onClick={() => {
+                     clearInterval(stopWatch.current);
+                  }}
+               >
+                  Stop
+               </Button>
+               <Button
+                  onClick={() => {
+                     setMillisec(0);
+                     setStopSec(0);
+                     setStopMin(0);
+                     clearInterval(stopWatch.current);
+                  }}
+               >
+                  Reset
+               </Button>
             </div>
          )}
       </div>
