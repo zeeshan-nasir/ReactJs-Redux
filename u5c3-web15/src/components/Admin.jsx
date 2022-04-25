@@ -1,9 +1,11 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
+import { DataContext } from "../contexts/DataContext";
 
 export const Admin = () => {
    const { isAuth } = useContext(AuthContext);
+   const { handleData } = useContext(DataContext);
 
    const [form, setForm] = useState({
       employee_name: "",
@@ -30,6 +32,7 @@ export const Admin = () => {
 
    const handleSubmit = (e) => {
       e.preventDefault();
+      handleData(1, "total_new");
 
       fetch("http://localhost:8080/employee", {
          method: "POST",

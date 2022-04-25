@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
+import { DataContext } from "../contexts/DataContext";
 
 export const EmployeeDetails = () => {
    const { id } = useParams();
    const [data, setData] = useState({});
    const { isAuth } = useContext(AuthContext);
+   const { handleData } = useContext(DataContext);
 
    const fetchData = async () => {
       let fetched = await fetch(`http://localhost:8080/employee/${id}`);
@@ -19,10 +21,14 @@ export const EmployeeDetails = () => {
       fetchData();
    }, []);
 
+   const handleChange = (name) => {
+      handleData(1, name);
+   };
+
    if (!isAuth) {
       return <Navigate to={"/login"} />;
    }
-   
+
    return (
       <div className="user_details">
          <img className="user_image" alt="" src={data.image} />
@@ -35,11 +41,18 @@ export const EmployeeDetails = () => {
          Title: <b className="title">{data.title}</b>
          {/* Show this button only if user is not already terminated (users status is working) */}
          {data.status === "terminated" ? null : (
-            <button className="fire">Fire Employee</button>
+            <button onClick={() => handleChange("terminated")} className="fire">
+               Fire Employee
+            </button>
          )}
          {/* Show this button only if user is not already team lead or terminated */}
          {data.title === "Team Lead" ? null : (
-            <button className="promote">promote</button>
+            <button
+               onClick={() => handleChange("promoted")}
+               className="promote"
+            >
+               promote
+            </button>
          )}
       </div>
    );

@@ -22,7 +22,9 @@ export const DataContextProvider = ({ children }) => {
       total_new: 0,
    });
 
-   const handleData = (state) => {
+   const handleData = (value, name) => {
+      datacon[`${name}`] += value;
+
       setDatacon({ ...datacon });
    };
 

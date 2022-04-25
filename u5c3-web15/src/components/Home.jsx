@@ -46,8 +46,7 @@ export const Home = () => {
                <span className="total_promoted">{datacon.promoted}</span>
             </div>
             <div>
-               Total New:{" "}
-               <span className="total_new">{employees.length - 10}</span>
+               Total New: <span className="total_new">{datacon.total_new}</span>
             </div>
          </div>
       </>
