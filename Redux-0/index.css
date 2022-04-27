@@ -1,0 +1,27 @@
+.todoApp {
+   width: 30%;
+   margin: auto;
+   border: 1px solid rgb(198, 198, 198);
+   text-align: center;
+   margin-top: 40px;
+   height: 600px;
+}
+
+#todoInput {
+   width: 300px;
+}
+
+#todocard {
+   border: 1px solid rgb(161, 161, 161);
+   display: flex;
+   justify-content: left;
+   align-items: center;
+   width: 95%;
+   margin: auto;
+   margin-bottom: 10px;
+}
+
+#cardText {
+   padding-left: 10px;
+   font-size: 18px;
+}
