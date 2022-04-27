@@ -12,7 +12,7 @@ const AllTodos = () => {
    const handleDeletion = (id) => {
       dispatch(
          deleteTodo({
-            title: id,
+            id: id,
          })
       );
    };
@@ -20,17 +20,17 @@ const AllTodos = () => {
    const handleToggle = (id) => {
       dispatch(
          toggleTodo({
-            title: id,
+            id: id,
          })
       );
    };
 
    return (
       <div className="allT">
-         {todos.map((item, index) => {
+         {todos.map((item) => {
             return (
                <div
-                  key={index}
+                  key={item.id}
                   className={item.status === true ? "itemChecked" : "item"}
                >
                   <input
@@ -40,7 +40,7 @@ const AllTodos = () => {
                      type="checkbox"
                      className="check"
                   />
-                  <Link to={`/todo/${index}`} className="listText">
+                  <Link to={`/todo/${item.id}`} className="listText">
                      {item.title}
                   </Link>
                   <button

@@ -4,12 +4,13 @@ import { deleteTodo } from "../Redux/actions";
 
 const DoneTodos = () => {
    const dispatch = useDispatch();
+
    const todos = useSelector((store) => store.todos);
-   const handleDeletion = (title) => {
+
+   const handleDeletion = (id) => {
       dispatch(
          deleteTodo({
-            title: title,
-            status: false,
+            id: id,
          })
       );
    };
@@ -20,14 +21,14 @@ const DoneTodos = () => {
             .filter((e) => {
                return e.status === true;
             })
-            .map((item, index) => {
+            .map((item) => {
                return (
-                  <div key={index} className="itemChecked">
+                  <div key={item.id} className="itemChecked">
                      <input checked type="checkbox" className="check" />
                      {item.title}
                      <button
                         className="btn3"
-                        onClick={() => handleDeletion(item.title)}
+                        onClick={() => handleDeletion(item.id)}
                      >
                         ⁃
                      </button>
