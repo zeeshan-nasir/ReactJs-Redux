@@ -7,7 +7,7 @@ export default function Todo() {
    const [text, setText] = useState("");
 
    const dispatch = useDispatch();
-   const todos = useSelector((store) => store.todos);
+   const todos = useSelector((store) => store.todos.todos);
 
    const handleChange = () => {
       dispatch(
