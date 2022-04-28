@@ -1,7 +1,5 @@
 .detailCard {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+   text-align: center;
    width: 30%;
    margin: auto;
    background-color: rgb(221, 214, 187);
@@ -35,4 +33,11 @@
    width: 30px;
    height: 30px;
    flex: .2;
+}
+
+.detailCard1 {
+   background-color: rgb(221, 214, 187);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }

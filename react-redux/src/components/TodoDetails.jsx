@@ -33,18 +33,24 @@ export default function SingleTodo() {
 
    return (
       <div className="detailCard">
-         <input
-            type="checkbox"
-            className="check1"
-            onChange={() => handleToggle(id)}
-         ></input>
-         <div>
-            <h2>Todo: {todo[0].title}</h2>
-            <h2>Status: {todo[0].status ? "Complete" : "Incomplete"}</h2>
-         </div>
-         <button className="detailBtn" onClick={() => handleDeletion(id)}>
-            Delete
-         </button>
+         {todo.length === 1 ? (
+            <div className="detailCard1">
+               <input
+                  type="checkbox"
+                  className="check1"
+                  onChange={() => handleToggle(id)}
+               ></input>
+               <div>
+                  <h2>Todo: {todo[0].title}</h2>
+                  <h2>Status: {todo[0].status ? "Complete" : "Incomplete"}</h2>
+               </div>
+               <button className="detailBtn" onClick={() => handleDeletion(id)}>
+                  Delete
+               </button>
+            </div>
+         ) : (
+            <h1>Todo Deleted</h1>
+         )}
       </div>
    );
 }
