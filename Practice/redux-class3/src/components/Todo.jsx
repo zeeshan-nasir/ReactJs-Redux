@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, deleteTodo } from "../Redux/Todos/action";
+import { addTodo, deleteTodo, getTodos } from "../Redux/Todos/action";
 import "./todo.css";
 
 export default function Todo() {
@@ -28,14 +28,28 @@ export default function Todo() {
       );
    };
 
+   useEffect(() => {
+      dispatch(getTodos());
+   });
+
    return (
       <div className="todo">
          <h1>Todo List</h1>
+         <select
+            onChange={(e) => {
+               dispatch(sort(e.target.value));
+            }}
+            name=""
+            id=""
+         >
+            <option value="id">Sort by id</option>
+            <option value="status">Sort by status</option>
+         </select>
          <div className="list">
             {todos.map((e) => {
                return (
                   <div key={e.title} className="item">
-                     ➣ {e.title}
+                     ➣{e.id} {e.title} - {e.status ? "Done" : "Not Done"}
                      <button
                         className="delBtn"
                         onClick={() => handleDelete(e.title)}
