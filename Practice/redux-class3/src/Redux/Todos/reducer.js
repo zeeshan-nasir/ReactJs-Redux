@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO, SORT } from "./action";
+import { ADD_TODO, DELETE_TODO } from "./action";
 
 const init = { todos: [] };
 
@@ -15,19 +15,19 @@ export const todoReducer = (store = init, { type, payload }) => {
                }),
             ],
          };
-      case SORT:
-         return {
-            ...store,
-            todos: [
-               ...store.todos.sort((a, b) => {
-                  a[payload] > b[payload]
-                     ? 1
-                     : a[payload] < b[payload]
-                     ? -1
-                     : 0;
-               }),
-            ],
-         };
+      // case SORT:
+      //    return {
+      //       ...store,
+      //       todos: [
+      //          ...store.todos.sort((a, b) => {
+      //             a[payload] > b[payload]
+      //                ? 1
+      //                : a[payload] < b[payload]
+      //                ? -1
+      //                : 0;
+      //          }),
+      //       ],
+      //    };
       default:
          return store;
    }

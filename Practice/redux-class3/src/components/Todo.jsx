@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, deleteTodo, getTodos } from "../Redux/Todos/action";
+import { addTodo, deleteTodo, sort } from "../Redux/Todos/action";
 import "./todo.css";
 
 export default function Todo() {
@@ -8,14 +8,21 @@ export default function Todo() {
 
    const dispatch = useDispatch();
    const todos = useSelector((store) => store.todos.todos);
+   console.log("object", todos);
 
    const handleChange = () => {
-      dispatch(
-         addTodo({
-            title: text,
-            status: false,
-         })
-      );
+      const payload = {
+         title: text,
+         status: false,
+      };
+
+      fetch("http://localhost:8080/todos", {
+         method: "POST",
+         headers: {
+            "content-type": "application/json",
+         },
+         body: JSON.stringify(payload),
+      });
    };
 
    const handleDelete = (title) => {
@@ -29,18 +36,18 @@ export default function Todo() {
    };
 
    useEffect(() => {
-      dispatch(getTodos());
-   });
+      dispatch(addTodo());
+   }, []);
 
    return (
       <div className="todo">
          <h1>Todo List</h1>
          <select
-            onChange={(e) => {
-               dispatch(sort(e.target.value));
-            }}
-            name=""
-            id=""
+         // onChange={(e) => {
+         //    dispatch(sort(e.target.value));
+         // }}
+         // name=""
+         // id=""
          >
             <option value="id">Sort by id</option>
             <option value="status">Sort by status</option>

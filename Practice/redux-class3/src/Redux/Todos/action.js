@@ -20,8 +20,10 @@ const deleteTodo = (data) => {
    };
 };
 
-const getTodos = async (dispatch) => {
-   const data = await fetch("");
+const getTodos = () => async (dispatch) => {
+   const data = await fetch("http://localhost:8080/todos").then((x) =>
+      x.json()
+   );
    dispatchEvent(addTodo(data));
 };
 
