@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { login } from "../Redux/Auth/actions";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
    const [form, setForm] = useState({
@@ -6,27 +10,29 @@ export const Login = () => {
       password: "",
    });
 
-   const getData = async () => {
-      let fetched = await fetch("http://localhost:8080/users", {
-         method: "GET",
-         headers: {
-            "Content-Type": "application/json",
-         },
-         body: JSON.stringify(form),
-      });
-
-      fetched = await fetched.json();
-      console.log(fetched);
-      // if (!fetched.error) {
-      //    handleAuth(true);
-      //    navigate(-2);
-      // }
-   };
+   const dispatch = useDispatch();
+   const navigate = useNavigate();
 
    const handleSubmit = (e) => {
       e.preventDefault();
-
-      getData();
+      axios.get("http://localhost:8080/users").then((data) => {
+         data.data.map((item) => {
+            // console.log(item);
+            if (
+               item.username === form.username &&
+               item.pass === form.password
+            ) {
+               // console.log(item);
+               dispatch(login({ login: true }));
+               console.log(item.role);
+               if (item.role === "admin") {
+                  navigate("/orders");
+               } else {
+                  navigate("/neworder");
+               }
+            }
+         });
+      });
    };
 
    const handleChange = (e) => {
