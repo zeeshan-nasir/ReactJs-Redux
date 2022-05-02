@@ -9,8 +9,8 @@ import "./App.css";
 import { useSelector } from "react-redux";
 
 function App() {
-   const loginStatus = useSelector((store) => store.login);
-   //  console.log(loginStatus);
+   const loginStatus = useSelector((store) => store.isLoggedin);
+   console.log(loginStatus);
 
    return (
       <div className="App">

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export const NewOrder = () => {
    // Get data of only this user. store it in redux
@@ -6,6 +7,28 @@ export const NewOrder = () => {
    //  on submit click create a new order, new order has status `Not Accepted`
 
    const [data, setData] = useState([]);
+   const store = useSelector((store) => store);
+
+   const getData = async () => {
+      let fetched = await fetch(
+         `http://localhost:8080/orders?owner_name=${store.username}`
+      );
+      fetched = await fetched.json();
+      setData(fetched);
+   };
+   console.log(data);
+
+   useEffect(() => {
+      getData();
+   }, []);
+
+   const handleFinished = () => {
+      let filtered = data.filter((e) => {
+         return e.status === "Done";
+      });
+
+      setData(filtered);
+   };
 
    return (
       <div>
@@ -37,8 +60,9 @@ export const NewOrder = () => {
          <div className="pastOrders">
             {/* this button filters the data below. */}
             {/* it's just a toggle of redux state something like `showUnfinished`  */}
-            <button className="filter">
+            <button onClick={handleFinished} className="filter">
                {/* Text should change like:   Show {showUnfinished ? "all" : "Only unfinished"} */}
+               Unfinished
             </button>
 
             {/* Here create a div for every oreder, filter them before based on `showUnfinished` */}
@@ -49,6 +73,7 @@ export const NewOrder = () => {
                      <span className="problem">{e.problem}</span>{" "}
                      <span className="cost">
                         {/* if status is not accepted then keep it empty otherwise show cost like $1234 */}
+                        {e.status !== "Not Accepted" ? "$420" : null}
                      </span>
                      <p className="status">Status: {e.status}</p>
                      <hr />

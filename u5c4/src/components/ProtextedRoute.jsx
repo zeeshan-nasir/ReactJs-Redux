@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { Navigate } from "react-router";
 
 export const ProtectedRoute = ({ children }) => {
-   const loginStatus = useSelector((store) => store.login);
+   const loginStatus = useSelector((store) => store.isLoggedin);
 
    if (!loginStatus) {
       return <Navigate to="/login" replace={false} />;

@@ -1,15 +1,17 @@
 import { LOGIN_TOGGLE } from "./actions";
 
-// const init = {
-//    role: false,
-// };
+const init = {
+   username: "",
+   isLoggedin: false,
+};
 
-export const reducer = (store, { type, payload }) => {
+export const reducer = (store = init, { type, payload }) => {
    switch (type) {
       case LOGIN_TOGGLE:
          return {
             ...store,
-            login: payload.login,
+            username: payload.username,
+            isLoggedin: payload.isLoggedin,
          };
       default:
          return store;

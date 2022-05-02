@@ -23,7 +23,7 @@ export const Login = () => {
                item.pass === form.password
             ) {
                // console.log(item);
-               dispatch(login({ login: true }));
+               dispatch(login({ username: item.username, isLoggedin: true }));
                console.log(item.role);
                if (item.role === "admin") {
                   navigate("/orders");
