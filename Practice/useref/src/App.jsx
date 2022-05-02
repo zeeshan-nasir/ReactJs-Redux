@@ -5,8 +5,8 @@ import Divref from "./components/Divref";
 function App() {
    return (
       <div className="App">
-         <Timer />
-         {/* <DivRef /> */}
+         {/* <Timer /> */}
+         <Divref />
       </div>
    );
 }
