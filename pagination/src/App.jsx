@@ -5,7 +5,7 @@ function App() {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(5);
+    const [postsPerPage, setPostsPerPage] = useState(10);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -24,18 +24,18 @@ function App() {
         fetchPosts();
     }, []);
 
-    // Get current posts
-
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
     // Change page
     const pageNumbers = [];
 
     for (let i = 1; i <= Math.ceil(posts.length / postsPerPage); i++) {
         pageNumbers.push(i);
     }
+
+    // Get current posts
+
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
     if (loading) {
         return <h1>Loading...</h1>;
