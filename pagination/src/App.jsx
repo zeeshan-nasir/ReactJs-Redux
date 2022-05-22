@@ -5,7 +5,7 @@ function App() {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(5);
+    const [postsPerPage, setPostsPerPage] = useState(5);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -31,11 +31,6 @@ function App() {
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
     // Change page
-    
-    const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
-
     const pageNumbers = [];
 
     for (let i = 1; i <= Math.ceil(posts.length / postsPerPage); i++) {
@@ -59,11 +54,20 @@ function App() {
             <div>
                 <ul className="pagination">
                     {pageNumbers.map((number) => (
-                        <button key={number} onClick={() => paginate(number)}>
+                        <button
+                            key={number}
+                            onClick={() => setCurrentPage(number)}
+                        >
                             {number}
                         </button>
                     ))}
                 </ul>
+            </div>
+            <div>
+                <button onClick={() => setPostsPerPage(5)}>Page Size: 5</button>
+                <button onClick={() => setPostsPerPage(15)}>
+                    Page Size: 15
+                </button>
             </div>
         </div>
     );
