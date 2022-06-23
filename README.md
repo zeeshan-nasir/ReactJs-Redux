@@ -1,2 +1,2 @@
 # Unit5-ReactJs
-This repository is for ReactJs classes, assignments and practice.
+ReactJs and redux applications and assignments.
